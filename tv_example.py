@@ -23,7 +23,6 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 query_params = {'query': 'kubernetes', 'max_results':100, 'tweet.fields':'created_at'}
 
-bearer_token ="AAAAAAAAAAAAAAAAAAAAAJT%2FbgEAAAAAr%2Fttd67bN%2FoEEaDneXn43d4LAIA%3DQEHb7Zseoe35RgSnauCmFztyjpCUBHAmwIS9tc036sZpwHY8TH"
 
 def bearer_oauth(r):
     """
