@@ -19,7 +19,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
 query = 'kubernetes'
-query_params = {'query', 'max_results':100, 'tweet.fields':'created_at'}
+query_params = {'query':'query', 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
