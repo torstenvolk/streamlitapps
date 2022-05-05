@@ -11,14 +11,15 @@ import pandas as pd
 import time
 
 ################# Variables ###########
-bearer_token = os.environ.get("BEARER_TOKEN")
+bearer_token ="bearer_token"
+#bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 query_params = {'query': 'kubernetes', 'max_results':100, 'tweet.fields':'created_at'}
 
-bearer_token ="bearer_token"
+
 
 ##########################################
 
