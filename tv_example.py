@@ -11,7 +11,7 @@ import pandas as pd
 import time
 
 ################# Variables ###########
-bearer_token ="bearer_token"
+bearer_token = st.secrets("bearer_token")
 #bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
 
