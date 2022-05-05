@@ -36,12 +36,7 @@ def bearer_oauth(r):
     return r
 
 def connect_to_endpoint(url, params):
-    search_term = st.radio(
-        "Select a twitter view",
-        ('kubernetes','infrastructureascode'))
-
-    query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
-    st.write(search_term)
+    
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
     if response.status_code != 200:
@@ -61,7 +56,11 @@ def main():
     
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show["text"])
-    
+    search_term = st.radio(
+        "Select a twitter view",
+        ('kubernetes','infrastructureascode'))
+    query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
+    st.write(search_term)
   
 
 if  __name__ == "__main__":
