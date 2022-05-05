@@ -18,7 +18,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
-query = 'kubernetes'
+query = 'emaproductstowatch'
 query_params = {'query':query, 'max_results':100, 'tweet.fields':'created_at'}
 
 
