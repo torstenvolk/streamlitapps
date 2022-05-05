@@ -36,7 +36,7 @@ def bearer_oauth(r):
 
 def connect_to_endpoint(url, params):
     query = st.text_input('query', 'kubernetes')
-    st.write(search)
+    st.write(query)
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
     if response.status_code != 200:
