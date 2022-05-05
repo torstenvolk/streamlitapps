@@ -22,7 +22,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
-query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
+query_params = {'query': st.write(search_term), 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
