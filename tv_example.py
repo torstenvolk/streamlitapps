@@ -22,10 +22,6 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
-search_term = st.radio(
-    "Select a twitter view",
-    ('kubernetes','infrastructureascode'))
-
 
 
 
@@ -40,8 +36,11 @@ def bearer_oauth(r):
     return r
 
 def connect_to_endpoint(url, params):
-    query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
+    search_term = st.radio(
+        "Select a twitter view",
+        ('kubernetes','infrastructureascode'))
 
+    query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
     st.write(search_term)
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
