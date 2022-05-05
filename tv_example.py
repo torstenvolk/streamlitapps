@@ -22,7 +22,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
-query_params = {'query': 'kubernetes', 'max_results':100, 'tweet.fields':'created_at'}
+query_params = {'query': 'infrastructureascode', 'max_results':100, 'tweet.fields':'created_at'}
 
 
 def bearer_oauth(r):
