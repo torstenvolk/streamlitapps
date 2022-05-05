@@ -24,9 +24,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
 
-search_term = st.radio(
-    "Select a twitter view",
-    ('kubernetes','infrastructureascode'))
+
 
 def bearer_oauth(r):
     """
@@ -57,7 +55,10 @@ def main():
     
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show["text"])
-
+    
+    search_term = st.radio(
+    "Select a twitter view",
+    ('kubernetes','infrastructureascode'))
 
 if  __name__ == "__main__":
     main()
