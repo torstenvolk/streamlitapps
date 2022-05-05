@@ -25,7 +25,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
 
 search_term = st.radio(
-    "Select a twitter view"
+    "Select a twitter view",
     ('kubernetes','infrastructureascode'))
 
 def bearer_oauth(r):
