@@ -17,7 +17,9 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
-query_params = {'query': 'kubernetes', 'max_results':100, 'tweet.fields':'created_at'}
+
+
+query_params = {'query': 'search', 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
@@ -33,6 +35,7 @@ def bearer_oauth(r):
     return r
 
 def connect_to_endpoint(url, params):
+    search = st.text_input('Movie title', 'dog')
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
     if response.status_code != 200:
