@@ -16,7 +16,7 @@ import time
 # To set your environment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 # bearer_token = os.environ.get("BEARER_TOKEN")
-bearer_token = st.write(st.secrets["bearer_token"])
+bearer_token = st.secrets["bearer_token"]
 
 search_url = "https://api.twitter.com/2/tweets/search/recent"
 
