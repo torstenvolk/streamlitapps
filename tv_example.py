@@ -45,8 +45,8 @@ def main():
     data_only = json_response["data"]
     df = pd.DataFrame(data_only)
 
-    df["created_at"] = pd.to_datetime(df["created_at"])
-    df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
+    # df["created_at"] = pd.to_datetime(df["created_at"])
+    # df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show["text"])
