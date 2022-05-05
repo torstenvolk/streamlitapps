@@ -19,7 +19,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
 query = 'emaproductstowatch'
-query_params = {'query':query, 'max_results':100, 'tweet.fields':'created_at'}
+query_params = {'query':st.text_input('query', 'kubernetes'), 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
@@ -35,7 +35,7 @@ def bearer_oauth(r):
     return r
 
 def connect_to_endpoint(url, params):
-    query = st.text_input('query', 'kubernetes')
+    
     st.write(query)
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
