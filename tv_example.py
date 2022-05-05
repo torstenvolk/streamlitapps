@@ -36,6 +36,7 @@ def bearer_oauth(r):
     search_term = st.radio(
         "Select a twitter view",
         ('kubernetes','infrastructureascode'))
+    st.write("search_term")
     return r
 
 def connect_to_endpoint(url, params):
