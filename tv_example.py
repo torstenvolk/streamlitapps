@@ -26,7 +26,6 @@ search_term = st.radio(
     "Select a twitter view",
     ('kubernetes','infrastructureascode'))
 
-query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
@@ -37,6 +36,7 @@ def bearer_oauth(r):
 
     r.headers["Authorization"] = f"Bearer {bearer_token}"
     r.headers["User-Agent"] = "v2RecentSearchPython"
+    query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
 
     st.write(search_term)
     return r
