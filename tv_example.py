@@ -26,7 +26,7 @@ search_term = st.radio(
     "Select a twitter view",
     ('kubernetes','infrastructureascode'))
 
-query_params = {'query': 'search_term', 'max_results':100, 'tweet.fields':'created_at'}
+query_params = {'query': "dogs", 'max_results':100, 'tweet.fields':'created_at'}
 
 
 
