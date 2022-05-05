@@ -9,7 +9,7 @@ import json
 import numpy as np
 import pandas as pd
 import time
-
+from datetime import datetime
 
 #from st_aggrid import AgGrid, GridOptionsBuilder
 
@@ -47,6 +47,11 @@ def main():
     json_response = connect_to_endpoint(search_url, query_params)
     data_only = json_response["data"]
     df = pd.DataFrame(data_only)
+    
+    df["creation_date"] = pd.to_datetime(df["creation_date"])
+    df["creation_date"] = df["creation_date"].dt.strftime("%Y-%m-%d %H:%M:%S")
+    
+    
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show["text"])
 
