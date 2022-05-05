@@ -33,6 +33,9 @@ def bearer_oauth(r):
 
     r.headers["Authorization"] = f"Bearer {bearer_token}"
     r.headers["User-Agent"] = "v2RecentSearchPython"
+    search_term = st.radio(
+        "Select a twitter view",
+        ('kubernetes','infrastructureascode'))
     return r
 
 def connect_to_endpoint(url, params):
@@ -56,9 +59,7 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show["text"])
     
-    search_term = st.radio(
-    "Select a twitter view",
-    ('kubernetes','infrastructureascode'))
+  
 
 if  __name__ == "__main__":
     main()
