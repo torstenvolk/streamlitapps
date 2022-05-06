@@ -50,7 +50,8 @@ def main():
     json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     data_only = json_response["data"]
     df = pd.DataFrame(data_only)
-
+	df1 = pd.DataFrame(json_response1)
+	
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -58,7 +59,7 @@ def main():
     st.table(df_show['text'])
 
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
-    #df1 = pd.DataFrame(json_response1)
+    #
     #st.write(df1)
 
 if  __name__ == "__main__":
