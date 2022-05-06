@@ -41,9 +41,9 @@ def connect_to_endpoint(url, params):
     print(response.status_code)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
-    #st.write(response)
+    st.write(response)
     return response.json()
-
+	
 
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
