@@ -47,7 +47,7 @@ def connect_to_endpoint(url, params):
 
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
-    #json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
+    json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     data_only = json_response["data"]
     df = pd.DataFrame(data_only)
 
