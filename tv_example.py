@@ -55,7 +55,7 @@ def main():
     data_only = json_response["data"]
     data_only1 = json_response1["data"]
     df1 = pd.DataFrame(data_only1)
-    st.write("shit")
+    st.write(df1)
     df = pd.DataFrame(data_only)
 	
     
