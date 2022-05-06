@@ -51,7 +51,7 @@ def main():
     data_only = json_response["data"]
     data_only1 = json_response["data"]
     df = pd.DataFrame(data_only)
-    st.write(pd.DataFrame(json.dumps(data_only1)))
+    st.table(pd.DataFrame(data_only1))
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
