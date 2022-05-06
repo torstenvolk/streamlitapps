@@ -14,14 +14,18 @@ import time
 bearer_token = st.secrets["bearer_token"]
 #bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
-metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
+metrics_url = "https://api.twitter.com/2/tweets/search/recent"
+
+#metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
-metrics_query_params = {'query':st.text_input('query2', 'ema_research')}
+query_params1 = {'query1':st.text_input('query1', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
+
+#metrics_query_params = {'query':st.text_input('query2', 'ema_research')}
 
 
 ##########################################
@@ -47,9 +51,9 @@ def connect_to_endpoint(url, params):
 
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
-    json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
+    json_response1 = connect_to_endpoint(metrics_url, query_params1)
     data_only = json_response["data"]
-    data_only1 = json_response["data"]
+    data_only1 = json_response1["data"]
     df = pd.DataFrame(data_only)
     st.dataframe(pd.DataFrame(data_only1))
     
