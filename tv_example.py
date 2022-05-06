@@ -56,7 +56,7 @@ def main():
     data_only1 = json_response1["data"]
     df1 = pd.DataFrame(data_only1)
     df = pd.DataFrame(data_only)
-	st.write(df1)
+	
     
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
@@ -67,6 +67,6 @@ def main():
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #
     #st.write(df1)
-
+	st.write(df1)
 if  __name__ == "__main__":
     main()
