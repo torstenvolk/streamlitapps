@@ -52,12 +52,13 @@ def main():
     data_only1 = json_response["data"]
     df = pd.DataFrame(data_only)
     df1 = pd.DataFrame(data_only1)
+    st.dataframe(df1)
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show['text'])
-	st.dataframe(df1)
+	
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #
     #st.write(df1)
