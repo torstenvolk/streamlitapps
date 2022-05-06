@@ -57,9 +57,8 @@ def main():
     st.table(df_show['text'])
 
 	json_response = connect_to_endpoint(metrics_url, metrics_query_params)
-    data_only = json_response["data"]
-    df = pd.DataFrame(data_only)
-    st.write(df)
+    df1 = pd.DataFrame(data_only)
+    st.write(df1)
 
 if  __name__ == "__main__":
     main()
