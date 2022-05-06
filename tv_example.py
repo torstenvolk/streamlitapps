@@ -14,13 +14,14 @@ import time
 bearer_token = st.secrets["bearer_token"]
 #bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
+metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
-query = 'emaproductstowatch'
-query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
 
+query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
+metrics_query_params {'query':st.text_input('query', 'ema_research')}
 
 
 ##########################################
@@ -36,13 +37,11 @@ def bearer_oauth(r):
 
 def connect_to_endpoint(url, params):
     
-    st.write(query)
     response = requests.get(url, auth=bearer_oauth, params=params)
     print(response.status_code)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
-    st.write(response)
-    st.metric('My metric', 42, 2)
+
     return response.json()
 	
 
@@ -57,6 +56,10 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show['text'])
 
+	json_response = connect_to_endpoint(metrics_url, metrics_query_params)
+    data_only = json_response["data"]
+    df = pd.DataFrame(data_only)
+    st.write(df)
 
 if  __name__ == "__main__":
     main()
