@@ -22,7 +22,7 @@ metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
 metrics_query_params = {'query':'query'}
-st.write('query')
+st.write("query")
 
 ##########################################
 
