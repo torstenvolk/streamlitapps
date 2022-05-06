@@ -67,6 +67,6 @@ def main():
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #
     #st.write(df1)
-	st.table(df1)
+	st.write('shit')
 if  __name__ == "__main__":
     main()
