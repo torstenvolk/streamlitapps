@@ -49,6 +49,7 @@ def main():
     json_response = connect_to_endpoint(search_url, query_params)
     json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     data_only = json_response["data"]
+    data_only1 = json_response["data"]
     df = pd.DataFrame(data_only)
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
