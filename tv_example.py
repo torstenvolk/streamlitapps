@@ -54,6 +54,7 @@ def main():
     json_response1 = connect_to_endpoint(metrics_url, query_params1)
     data_only = json_response["data"]
     data_only1 = json_response1["data"]
+    df1 = pd.DataFrame(data_only1)
     df = pd.DataFrame(data_only)
 	
     
@@ -66,6 +67,6 @@ def main():
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #
     #st.write(df1)
-df1 = pd.DataFrame(data_only1)
+
 if  __name__ == "__main__":
     main()
