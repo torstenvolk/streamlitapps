@@ -57,7 +57,7 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show['text'])
 
-	json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
+	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #df1 = pd.DataFrame(json_response1)
     #st.write(df1)
 
