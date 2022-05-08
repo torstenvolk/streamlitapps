@@ -72,7 +72,7 @@ input = st.text_input("Enter tweet url")
 
 if input:
 	res = theTweet(input)
-	st.write(res)
+	st.write(res["url"])
 
 	
 if  __name__ == "__main__":
