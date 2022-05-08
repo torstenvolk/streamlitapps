@@ -8,7 +8,9 @@ import numpy as np
 import pandas as pd
 import time
 import streamlit.components.v1 as components
-
+import streamlit as st 
+import streamlit.components.v1 as components
+import requests
 
 ################# Variables ###########
 bearer_token = st.secrets["bearer_token"]
@@ -57,16 +59,20 @@ def main():
     st.table(df_show[['text','id']])
 
 
+
+
+
 def theTweet(tweet_url):
 	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
 	response = requests.get(api)
 	res = response.json()
 	return res
 	
-	input = st.text_input("Enter tweet url")
-	if input:
-		res = theTweet(input)
-		st.write(res)
+input = st.text_input("Enter tweet url")
+
+if input:
+	res = theTweet(input)
+	st.write(res)
 
 	
 if  __name__ == "__main__":
