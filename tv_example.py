@@ -14,7 +14,6 @@ import time
 bearer_token = st.secrets["bearer_token"]
 #bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
-metrics_url = "https://api.twitter.com/2/tweets/search/recent"
 
 #metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
 
@@ -23,7 +22,6 @@ metrics_url = "https://api.twitter.com/2/tweets/search/recent"
 
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
-query_params1 = {'query':st.text_input('query1', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
 
 #metrics_query_params = {'query':st.text_input('query2', 'ema_research')}
 
@@ -45,16 +43,12 @@ def connect_to_endpoint(url, params):
     print(response.status_code)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
-
     return response.json()
 	
 
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
-    json_response1 = connect_to_endpoint(metrics_url, query_params1)
     data_only = json_response["data"]
-    data_only1 = json_response1["data"]
-    df1 = pd.DataFrame(data_only1)
     st.write(json.dumps(df1))
     df = pd.DataFrame(data_only)
 	
