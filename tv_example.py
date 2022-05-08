@@ -54,7 +54,8 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
 	input = "https://twitter.com/BotFoucault/status/1522893811227181057"
-
+	return input
+	
 def theTweet(tweet_url):
 	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
 	response = requests.get(api)
