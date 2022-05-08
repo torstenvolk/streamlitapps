@@ -26,7 +26,6 @@ query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':10
 
 
 
-
 ##########################################
 
 def bearer_oauth(r):
@@ -58,6 +57,7 @@ def main():
 
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
+	input = "https://twitter.com/twitter/statuses/"+df_show['id']
 
 
 
@@ -72,7 +72,7 @@ def theTweet(tweet_url):
 	return res
 	
 #input = st.text_input("Enter tweet url")
-input = "https://twitter.com/twitter/statuses/"+df_show['id']
+
 
 if input:
 	res = theTweet(input)
