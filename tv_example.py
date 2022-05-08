@@ -68,9 +68,9 @@ def theTweet(tweet_url):
 	response = requests.get(api)
 	res = response.json()["html"]
 	components.html(res,height= 700)
-	st.write("test234")
-	return res
 	
+	return res
+st.write("test234")	
 input = st.text_input("Enter tweet url")
 
 
