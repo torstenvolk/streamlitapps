@@ -24,6 +24,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,   'tweet.fields':'created_at,id'}
 
+input = "https://twitter.com/BotFoucault/status/1522893811227181057"
 
 
 ##########################################
@@ -53,8 +54,6 @@ def main():
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
-	input = "https://twitter.com/BotFoucault/status/1522893811227181057"
-	return input
 	
 def theTweet(tweet_url):
 	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
