@@ -57,7 +57,6 @@ def main():
 
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
-	input = "https://twitter.com/twitter/statuses/"+df_show['id']
 
 
 
