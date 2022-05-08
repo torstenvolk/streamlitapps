@@ -56,7 +56,7 @@ def main():
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     df_show = df.set_index("created_at", inplace=False)
-    st.table(df_show[['text','url']])
+    st.table(df_show[['text','created_at']])
 
 
 
