@@ -9,7 +9,7 @@ def theTweet(tweet_url):
 	res = response.json()
 	return res
 	
-	input = st.text_input("Enter tweet url")
-	if input:
-		res = theTweet(input)
-		st.write(res)
+input = st.text_input("Enter tweet url")
+if input:
+	res = theTweet(input)
+	st.write(res)
