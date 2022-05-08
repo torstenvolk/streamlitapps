@@ -62,18 +62,18 @@ def main():
 
 
 
-def theTweet(tweet_url):
-	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
-	response = requests.get(api)
-	res = response.json()["html"]
-	components.html(res,height= 700)
-	return res
+#def theTweet(tweet_url):
+#	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
+#	response = requests.get(api)
+#	res = response.json()["html"]
+#	components.html(res,height= 700)
+#	return res
 	
-input = st.text_input("Enter tweet url")
+#input = st.text_input("Enter tweet url")
 
-if input:
-	res = theTweet(input)
-	st.write(res["url"])
+#if input:
+#	res = theTweet(input)
+#	st.write(res["url"])
 	
 	
 if  __name__ == "__main__":
