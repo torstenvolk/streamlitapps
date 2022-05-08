@@ -49,7 +49,6 @@ def connect_to_endpoint(url, params):
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
     data_only = json_response["data"]
-    response = requests.get(api)
     df = pd.DataFrame(data_only)	   
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
