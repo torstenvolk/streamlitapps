@@ -76,9 +76,9 @@ class Tweet(object):
         return components.html(self.text, height=600)
 
 
-t = Tweet("https://twitter.com/OReillyMedia/status/901048172738482176").component()
+#t = Tweet("https://twitter.com/OReillyMedia/status/901048172738482176").component()
 
-
+t = Tweet("https://twitter.com/search?q=kubernetes&src=typed_query&f=live").component()
 
 	
 if  __name__ == "__main__":
