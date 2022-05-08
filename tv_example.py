@@ -22,7 +22,7 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
 
 
-query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
+query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,   'tweet.fields':'created_at,lang'}
 
 
 
@@ -57,7 +57,7 @@ def main():
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     df_show = df.set_index("created_at", inplace=False)
-    st.table(df_show[['url','text','id']])
+    st.table(df_show[['text','id']])
 
 
 
