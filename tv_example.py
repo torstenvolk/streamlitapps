@@ -23,8 +23,8 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,   'tweet.fields':'created_at,id'}
+st.write(query)	
 
-input = "https://twitter.com/BotFoucault/status/1522893811227181057"
 
 
 ##########################################
@@ -70,7 +70,6 @@ def main():
 #	res = theTweet(input)\
 #	st.write(res["url"])
 	
-st.write('query')	
 	
 if  __name__ == "__main__":
     main()
