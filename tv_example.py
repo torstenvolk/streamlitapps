@@ -69,7 +69,7 @@ def main():
 #if input:
 #	res = theTweet(input)\
 #	st.write(res["url"])
-	
+st.write(query)	
 	
 if  __name__ == "__main__":
     main()
