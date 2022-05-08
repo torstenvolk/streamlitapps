@@ -14,7 +14,6 @@ import time
 bearer_token = st.secrets["bearer_token"]
 #bearer_token = os.environ.get("BEARER_TOKEN")
 search_url = "https://api.twitter.com/2/tweets/search/recent"
-
 #metrics_url = "https://api.twitter.com/2/tweets/counts/recent"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
@@ -23,7 +22,6 @@ search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 query_params = {'query':st.text_input('query', 'ema_research'), 'max_results':100,  'tweet.fields':'created_at,public_metrics'}
 
-#metrics_query_params = {'query':st.text_input('query2', 'ema_research')}
 
 
 ##########################################
@@ -56,7 +54,7 @@ def main():
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     df_show = df.set_index("created_at", inplace=False)
-    #ßst.table(df_show['text'])
+    st.table(df_show['text'])
 	
 	#json_response1 = connect_to_endpoint(metrics_url, metrics_query_params)
     #
