@@ -55,7 +55,7 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
 	id = df_show['id']
-	
+	st.write(id)
 #def theTweet(tweet_url):
 #	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
 #	response = requests.get(api)
