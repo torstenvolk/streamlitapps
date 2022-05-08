@@ -71,7 +71,8 @@ def theTweet(tweet_url):
 	components.html(res,height= 700)
 	return res
 	
-input = st.text_input("Enter tweet url")
+#input = st.text_input("Enter tweet url")
+input = "https://twitter.com/twitter/statuses/1522893811227181057"
 
 if input:
 	res = theTweet(input)
