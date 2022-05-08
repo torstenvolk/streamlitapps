@@ -67,9 +67,9 @@ def main():
 #st.write("test234")	
 #input = st.text_input("Enter tweet url")
 
-if input:
-	res = theTweet(input)
-	st.write(res["url"])
+#if input:
+#	res = theTweet(input)\
+#	st.write(res["url"])
 	
 	
 	
