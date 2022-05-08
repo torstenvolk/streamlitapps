@@ -49,7 +49,6 @@ def connect_to_endpoint(url, params):
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
     data_only = json_response["data"]
-    st.write(json.dumps(df1))
     df = pd.DataFrame(data_only)
 	
     
