@@ -62,8 +62,8 @@ def theTweet(tweet_url):
 	components.html(res,height= 700)
 	return res
 	
-st.write("test234")	
-input = st.text_input("Enter tweet url")
+#st.write("test234")	
+#input = st.text_input("Enter tweet url")
 
 if input:
 	res = theTweet(input)
