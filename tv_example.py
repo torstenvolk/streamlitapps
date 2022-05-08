@@ -70,7 +70,7 @@ def theTweet(tweet_url):
 	components.html(res,height= 700)
 	return res
 	
-#input = st.text_input("Enter tweet url")
+input = st.text_input("Enter tweet url")
 
 
 if input:
