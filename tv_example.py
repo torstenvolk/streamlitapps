@@ -43,36 +43,26 @@ def connect_to_endpoint(url, params):
     print(response.status_code)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
-    return response.json()
-	
+    return response.json()	
 
 def main():
     json_response = connect_to_endpoint(search_url, query_params)
     data_only = json_response["data"]
-    df = pd.DataFrame(data_only)
-	
-    
+    df = pd.DataFrame(data_only)	   
     df["created_at"] = pd.to_datetime(df["created_at"])
     df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
-
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
-
-
-
-
-
 
 def theTweet(tweet_url):
 	api = "https://publish.twitter.com/oembed?url={}".format(tweet_url)
 	response = requests.get(api)
 	res = response.json()["html"]
 	components.html(res,height= 700)
-	
 	return res
+	
 st.write("test234")	
 input = st.text_input("Enter tweet url")
-
 
 if input:
 	res = theTweet(input)
