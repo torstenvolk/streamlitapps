@@ -72,7 +72,7 @@ def theTweet(tweet_url):
 	return res
 	
 #input = st.text_input("Enter tweet url")
-input = "https://twitter.com/twitter/statuses/",df_show['id']
+input = "https://twitter.com/twitter/statuses/"+df_show['id']
 
 if input:
 	res = theTweet(input)
