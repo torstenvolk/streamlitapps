@@ -53,11 +53,11 @@ def main():
     response = requests.get(api)
 	res = response.json()["html"]
 	components.html(res,height= 700)
-    df = pd.DataFrame(data_only)	   
-    df["created_at"] = pd.to_datetime(df["created_at"])
-    df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
-    df_show = df.set_index("created_at", inplace=False)
-    st.table(df_show[['text','id']])
+    #df = pd.DataFrame(data_only)	   
+    #df["created_at"] = pd.to_datetime(df["created_at"])
+    #df["created_at"] = df["created_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
+    #df_show = df.set_index("created_at", inplace=False)
+    #st.table(df_show[['text','id']])
     return res
 	
 #def theTweet(tweet_url):
