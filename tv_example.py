@@ -51,7 +51,6 @@ def main():
     df_show = df.set_index("created_at", inplace=False)
     st.table(df_show[['text','id']])
 
-st.write(query)	
 	
 if  __name__ == "__main__":
     main()
